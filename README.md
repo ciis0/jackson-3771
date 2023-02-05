@@ -1,11 +1,14 @@
 # Reproducer for jackson#3771
 
-* install Wildfly 24
-* install Eclipse MAT
-* deploy this WAR
+* install [Wildfly 27]
+  * start via `bin/standalone.bat`/`.sh`
+* install [Eclipse MAT]
+* deploy the WAR of this repo
+  * check releases if you don't want to build it yourself
+  * simply dropping the WAR into `standalone/deployments` should be enough (picking it up takes up to 5 seconds on my machine)
 * undeploy WAR
+  * simply delete the WAR file again (and .deployed file if you want)
 * acquire heap dump using MAT
-
 
 ## the leak
 
@@ -22,3 +25,6 @@ to find it in MAT:
       4. `key`
 
 ![leak in MAT](leak.png)
+
+[Wildfly 27]: https://www.wildfly.org/downloads/
+[Eclipse MAT]: https://www.eclipse.org/mat/downloads.php
