@@ -24,7 +24,11 @@ to find it in MAT:
       3. the single entry (`[10]`?)
       4. `key`
 
-![leak in MAT](leak.png)
+Reference to annotation class from deployment class-loader in annotation-introspector instance:
+![leak in MAT](img_1.png)
+
+Static reference to annotation-introspector from `ObjectMapper`.
+![img_1.png](img_2.png)
 
 [Wildfly 27]: https://www.wildfly.org/downloads/
 [Eclipse MAT]: https://www.eclipse.org/mat/downloads.php
